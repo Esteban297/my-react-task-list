@@ -2,14 +2,16 @@ import React from 'react'
 import { useState } from 'react';
 import { FaTrashAlt } from "react-icons/fa";
 import {FaRegEdit}from "react-icons/fa";
-import {handleOnClick} from "../hooks/useInput";
-import {useEdit} from "../hooks/useEdit";
+import {handleOnClick} from "./hooks/useInput";
+import {useEdit} from "./hooks/useEdit";
+import { useEffect } from 'react';
 
-// import { handleOnClick } from ""
 
 export const Input = (props) => {
     const { contenido } = props;
+    const { contenido2 } = props;
     const {id}= props;
+
 
 //VARIABLES DE ESTADO
     const [marcado, setMarcado] = useState(false)
@@ -45,10 +47,9 @@ export const Input = (props) => {
             setClasdeTitulo("new-estado")
         }
     }
-    
-    // const handleOnClick = useEffectApi2()
+
     //EDITAR
-    const {onChange , handleOnSubmit2} = useEdit();
+    const {onChange , handleOnSubmit2, onChangeDos} = useEdit(id);
     //VARIABLES DE EATDOS PARA EL INPUT ALTERNO
 
     const[ presionado, setPresionado]= useState(false);
@@ -64,7 +65,7 @@ export const Input = (props) => {
             setPresionado(true) 
             setClasdeTitulo2("estado2-input")
         }
-
+    
     }
     return (
         <div className={claseCont}>
@@ -75,6 +76,8 @@ export const Input = (props) => {
                 onChange={tareaHecha}
                 className='checkbox-round' value="first_checkbox" />
                 {contenido}
+                <br />
+                {contenido2}
                 <button
                 onClick={() => handleOnClick(id)}
                 className='iconos'>
@@ -90,8 +93,10 @@ export const Input = (props) => {
         <div className='mensaje'>
             {abrir ? <h5 className={claseTitulo}> Tarea realizada </h5> : null}
         </div>
+        
         {presionado ?<form 
-        onSubmit={()=>handleOnSubmit2(id)}
+        onSubmit={handleOnSubmit2
+        }
         className='mensaje2'>
     
             <input 
@@ -99,14 +104,19 @@ export const Input = (props) => {
             type="text" 
             className={claseTitulo2} 
             name="user_name"
-            onChange={ onChange} 
+            onChange={onChange}/>
 
-            /> 
-    
+            <input 
+            placeholder='Description' 
+            type="text"
+            className={claseTitulo2} 
+            name="userdos"
+            onChange={onChangeDos}>
+            </input> 
         <input
         type="submit" 
         className='btn'
-        value="Enviar"
+        value="Send"
         
         />
         </form>: null} 
