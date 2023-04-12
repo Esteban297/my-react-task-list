@@ -18,6 +18,7 @@ function createTask(TaskLista){
 setTasks ([...tasks,{
     id:tasks.length,
     lista:TaskLista
+    
 }
 
 ])
@@ -27,7 +28,7 @@ return (
     <div className='contenedor-promax'>
     <Header createTask={createTask}/>
     <TaskList tasks={tasks}/>
-    <Footer/>
+    <Footer tasks={tasks}/>
     </div>
 )
 }  

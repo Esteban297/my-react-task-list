@@ -1,13 +1,15 @@
-import { Input as Inputs } from './Input'
+import { Input as Inputs } from '../components/Input'
 
 export const TaskList = ({ tasks }) => {
 
     tasks = [];
 
     for (const i in localStorage) {
+        console.log(i)
         if(!isNaN(i))
         tasks.push(localStorage[i])
     }
+
 
     const buscarid =( tarea )=>{
         for (const i in localStorage) {
@@ -18,11 +20,6 @@ export const TaskList = ({ tasks }) => {
 
     }
 
-
-    console.log();
-
-
-    console.log(tasks)
 
     if (tasks.length === 0) {
         return (
@@ -35,7 +32,7 @@ export const TaskList = ({ tasks }) => {
         <div className='contenido'>
             {tasks.map((task, id) => (
             
-                <Inputs key={id} 
+                <Inputs key={id}
                 contenido={task}
                 id={buscarid(task)}
                 />

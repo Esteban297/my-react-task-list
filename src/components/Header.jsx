@@ -1,33 +1,24 @@
 import React from 'react'
-import { useState } from 'react';
-export const Header = ({createTask}) => {
+import {useEffectApi} from "../hooks/useEffect"
 
-    const[lista, setLista]= useState("")
-    const headlerOnSubmit =(e)=>{
-        let c = localStorage.length + 1
-        e.preventDefault();
-        createTask(lista)  
-        localStorage.setItem( c , lista)
-        window.location.reload();
-    } 
-    
+
+
+export const Header = () => {
+        const {onChange , handleOnSubmit} = useEffectApi();
     return (
         <div className='titu'>
             <h1 className='titu-h'>Todo App</h1>
             <form
-            onSubmit={headlerOnSubmit}
+            onSubmit={handleOnSubmit}
             className='formu'>
             <input 
             placeholder='titulo' 
-            type="text" 
+            type="text"
             className="btn-1" 
             name="user_name"
-            onChange={ (e)=>{
-            setLista (e.target.value)
-        
-                }} />
+            onChange={onChange} />
                 <input type="submit" className='btn-2' value="Enviar" />
             </form>
         </div>
-    )
+    )  
 }
