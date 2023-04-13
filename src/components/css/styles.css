@@ -1,21 +1,18 @@
 .contenedor{
     width: 100%;
     height: 100%;
-    margin: 0%;
-    padding: 0%;
-    background-image: url(../img/img.jpg);
-    background-repeat: no-repeat;
-    background-size: 100% 100%;
 }
 .contenedor-promax{
-    background-color: rgba(242, 240, 240, 0.952);
+    background-color: rgba(216, 238, 225, 0.952);
     border: 1px solid rgb(118, 118, 118);
-    margin-top: 30%;
-    margin-left: 5%;
     border-radius: 10px 10px ;
     width: 90%;
     height: 50%;
+    margin-top: 20%;
+    margin-left: 5%;
 }
+
+
 .titu{
     width: 90%;
     height: 30%;
@@ -34,8 +31,9 @@
     border:none;
     margin-right: 10px;
     border-radius: 10px 10px;
-    background-color: rgba(158, 183, 162, 0.797);
+    background-color: rgba(116, 166, 125, 0.797);
 }
+.btn-1::placeholder { color:black; }
 .btn-2{
     width: 20%;
     height: 20%;
@@ -70,9 +68,13 @@
 .not-taks{
     align-items:center ;
 }
+h4{
+    color: #313734 !important;
+}
 .cont-label{
     width: 100%;
     height: 25%;
+
     
 }
 .cont-label-1{
@@ -81,8 +83,8 @@
 .label{
     margin-left: 20px;
     margin-top: 10px;
-    width: 80%;
-    height: auto;
+    width: 90%;
+    height: 100%;
     border-radius: 10px 10px;
     background-color: rgba(199, 220, 202, 0.927);
     display: flex;
@@ -91,10 +93,10 @@
 .Label-underline{
     margin-left: 20px;
     margin-top: 20px;
-    width: 80%;
+    width: 70%;
     height: auto;
     border-radius: 10px 10px;
-    background-color: rgba(255, 255, 255, 0.618);
+    background-color: rgba(152, 214, 151, 0.618);
     display: flex;
     gap: 15px;
     text-decoration: line-through;
@@ -104,9 +106,10 @@
     margin-left: 30%;
 }
 .new-estado{
-    width: 100%;
-    text-align: center;
-    background-color: rgba(146, 192, 129, 0.579);
+    width: 20%;
+    height: 65%;
+    margin-top: 4%;
+    background-color: rgba(94, 238, 41, 0.579);
     border-radius: 10px 10px;
     color: rgb(0, 0, 0);
 }
@@ -119,6 +122,12 @@
     gap: 5px;
 
 }
+.contenedor-label{
+    width: 100%;
+    height:75%;
+    display: flex;
+    gap: 5px;
+}
 .estado2-input{
     margin-left: 20px;
     margin-top: 10px;
@@ -130,29 +139,30 @@
 }
 .btn{
     width: 20%;
-    height: 80%;
+    height: 50%;
     border:none;
     border-radius: 10px 10px;
     background-color: #45554c;
     color: white;
-    margin-top: 3%;
+    margin-top: 1%;
     
 }
 .checkbox-round {
     accent-color: rgb(55, 98, 44);
 }
 .iconos{
-width: 10%;
-height: 100%;
+width: 13%;
+height: 40%;
 display: flex;
 align-items: center;
 gap: 10px;
+margin-top: 10px;
 border: none;
 background-color: #45554c;
 color: white;
 border-radius: 5px 5px;
 justify-content: center;
-margin-top: 2px;
+align-items: center;
 }
 .cont-footer{
     width: 100%;
@@ -178,25 +188,69 @@ border-radius: 10px 10px;
 
 @media all and (min-width: 800px){
     .contenedor{
-        width: 80%;
-        margin: auto;
+        width: 100%;
+        height: 100%;
     }
     .contenedor-promax{
         width: 60%;
-        margin-left:20%;
+        margin-top: 20%;
+        margin-left: 20%;
     }
     }
 @media all and (min-width: 1280px){
     .contenedor{
-        width: 60%;
-        margin: auto;
+        width: 100%;
+        height: 100%;
     }
     .contenedor-promax{
         width: 45%;
-        margin: auto;
-        margin-top: 20%;
+        height: 60%;
+        margin-top: 10%;
+        margin-left: 30%;
     }
-    .label{
-        width: 90%;
+    .Label-underline{
+        margin-left: 20px;
+        margin-top: 20px;
+        width: 75%;
+        height: 65%;
+        border-radius: 10px 10px;
+        background-color: rgba(138, 177, 138, 0.618);
+        display: flex;
+        gap: 15px;
+        text-decoration: line-through;
     }
+    .iconos{
+        width: 8%;
+        height: 40%;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        border: none;
+        background-color: #45554c;
+        color: white;
+        border-radius: 5px 5px;
+        justify-content: center;
+        align-items: center;
+        margin-top: 2%;
+    }
+        .new-estado{
+            width: 17%;
+            height: 60%;
+            display: flex;
+            text-align: center;
+            justify-content: center;
+            align-items: center;
+            background-color: rgba(76, 255, 10, 0.579);
+            border-radius: 10px 10px;
+            color: rgb(0, 0, 0);
+        }
+        .mensaje2{
+            width: 90%;
+            height: 50%;
+            display: flex;
+            align-items: center;
+            justify-content:center ;
+            gap: 5px;
+        
+        }
     }
